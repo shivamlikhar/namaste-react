@@ -10,11 +10,17 @@ It’s built into many code editors like VS Code, Sublime Text, Atom, and WebSto
 Emmet uses shortcuts (abbreviations) that expand into full HTML or CSS code when you press Tab or Enter.
 
 Example: HTML Expansion
-Emmet Abbreviation	Expands to
-div	<div></div>
-div.container	<div class="container"></div>
-ul>li*3	<ul> <li></li> <li></li> <li></li> </ul>
-a[href="https://google.com"]	<a href="https://google.com"></a>
+Emmet Abbreviation           Expands to
+-----------------------------------------------------------
+div                          <div></div>
+div.container                <div class="container"></div>
+ul>li*3                      <ul> 
+                             <li></li> 
+                             <li></li> 
+                             <li></li> 
+                             </ul>
+a[href="https://google.com"] <a href="https://google.com"></a>
+
 
 ● Difference between a Library and Framework?
 
