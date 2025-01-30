@@ -1,4 +1,6 @@
-// This code is basic code how we can write Structured HTML code without JSX in React
+import React from "react";
+import ReactDom from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   { id: "heading", className: "attributeToH1Tag" },
@@ -32,5 +34,5 @@ const parent = React.createElement("div", { id: "parent" }, [
     ),
   ]),
 ]);
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDom.createRoot(document.getElementById("root"));
 root.render(parent);

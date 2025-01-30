@@ -1,0 +1,85 @@
+PS D:\NamasteReact> git init
+Initialized empty Git repository in D:/NamasteReact/.git/
+PS D:\NamasteReact> git branch -M main
+PS D:\NamasteReact> git add .
+PS D:\NamasteReact> git commit -m "episod-01"
+[main (root-commit) 240add7] episod-01
+ 5 files changed, 63 insertions(+)
+ create mode 100644 .vscode/settings.json
+ create mode 100644 README.md
+ create mode 100644 app.js
+ create mode 100644 index.css
+ create mode 100644 index.html
+PS D:\NamasteReact> git remote add origin https://github.com/shivamlikhar/namaste-react.git
+PS D:\NamasteReact> git push origin main
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 1.13 KiB | 290.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/shivamlikhar/namaste-react.git * [new branch]      main -> main
+PS D:\NamasteReact> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (namastereact)
+version: (1.0.0)                                                                                
+description: This is namaste react app by shivam
+entry point: (app.js)                                                                           
+test command: jest                                                                              
+git repository: (https://github.com/shivamlikhar/namaste-react.git)                             
+keywords: shivam                                                                                
+author: Shivam Likhar                                                                           
+license: (ISC)                                                                                  
+About to write to D:\NamasteReact\package.json:
+
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is namaste react app by shivam",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivamlikhar/namaste-react.git"
+  },
+  "keywords": [
+    "shivam"
+  ],
+  "author": "Shivam Likhar",
+  "license": "ISC",
+react/issues"
+  },
+  "homepage": "https://github.com/shivamlikhar/namaste-react#readme"   
+}
+
+
+Is this OK? (yes) y
+
+
+
+PS D:\NamasteReact> npm install -D parcel
+
+added 159 packages, and audited 160 packages in 59s
+
+85 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+npx parcel index.html -- Through this cmd parcel host our file to server on localhost:xxxx
+npx is similar to npm, here 
+npx is execuring the package
+& npm is for installation 
+
+npx parcel build index.html -- to build the application

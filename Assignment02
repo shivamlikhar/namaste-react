@@ -1,0 +1,212 @@
+Assisment -02:
+● - What is `NPM`?
+NPM (Package Manager) is the default package manager for Node.js. It is used to install, manage, and share JavaScript packages (libraries, frameworks, and tools).
+Key Features of NPM: 
+1. Package Management 📦
+-----------------
+Allows you to install, update, and remove JavaScript libraries or tools.
+Example: npm install parce -  installs the parce library.
+
+2. Dependency Management 🔄
+---------------------
+Keeps track of project dependencies in a package.json file.
+Example: When installing a package, NPM updates package.json and package-lock.json.
+
+3. Version Control 📌
+----------------
+Ensures projects use compatible versions of packages.
+Example: You can install specific package versions using npm install react@18.2.0.
+
+4. Script Running 🚀
+---------------
+Automates tasks using npm scripts inside package.json.
+Example: npm run build can trigger a build process.
+
+5. Global and Local Packages 🌍
+-------------------------
+Local installation: Installed inside a project folder (node_modules).
+Global installation: Available system-wide using npm install -g package-name.
+
+Common NPM Commands
+---------------------------------------------------------------
+Command                     | Description
+---------------------------------------------------------------
+npm init                    | Initializes a new Node.js project and creates package.json.
+npm install <package>       | Installs a package locally.
+npm install -g <package>    | Installs a package globally.
+npm update <package>        | Updates a package to its latest version.
+npm uninstall <package>     | Removes a package from the project.
+npm list                    | Lists installed packages.
+npm run <script>            | Runs a script defined in package.json.
+---------------------------------------------------------------
+
+● - What is `Parcel/Webpack`? Why do we need it?
+Parcel and Webpack are module bundlers used in web development to bundle, optimize, and manage JavaScript, CSS, HTML, and other assets. They help improve performance, reduce file size, and ensure compatibility across different browsers.
+
+
+📦 What is Parcel and Webpack? Why Do We Need Them?
+Parcel and Webpack are module bundlers used in web development to bundle, optimize, and manage JavaScript, CSS, HTML, and other assets. They help improve performance, reduce file size, and ensure compatibility across different browsers.
+
+🔍 Why Do We Need a Bundler?
+Modern web applications use multiple JavaScript files, CSS styles, images, and other assets. Without a bundler, managing dependencies and optimizing the performance of a web application would be difficult.
+
+Problems Without a Bundler:
+🚀 Too many HTTP requests → Slows down performance.
+⚠️ Global scope conflicts → Multiple scripts can interfere with each other.
+📦 No module system support → ES6 modules and CommonJS need to be bundled.
+🔄 No automatic optimizations → No minification, tree shaking, or lazy loading.
+🎭 Difficult asset management → Images, fonts, and CSS need proper handling.
+
+What is Webpack?
+Webpack is a powerful module bundler that processes and optimizes JavaScript, CSS, HTML, and assets for production. It helps to bundle multiple files into fewer optimized files.
+
+⚡ Key Features of Webpack
+✅ Module bundling → Bundles JS, CSS, and other files together.
+✅ Code splitting → Loads only necessary code using lazy loading.
+✅ Tree shaking → Removes unused JavaScript code.
+✅ Loaders & Plugins → Transforms files (e.g., Babel for ES6+).
+✅ Hot Module Replacement (HMR) → Updates code without refreshing the page.
+
+📌 How Webpack Works
+1.Takes an entry point (e.g., index.js).
+2.Processes all dependencies (JS, CSS, images).
+3.Uses Loaders to transform files (e.g., Babel for ES6).
+4.Uses Plugins to optimize assets.
+5.Generates a final bundled output (bundle.js).
+
+📌 What is Parcel?
+Parcel is a zero-configuration bundler that automatically handles JavaScript, CSS, HTML, and assets without requiring a config file (unlike Webpack).
+⚡ Key Features of Parcel
+✅ Zero-config setup → No need for webpack.config.js.
+✅ Faster builds → Uses multi-core processing.
+✅ Built-in HMR → Updates code live, without page reloads.
+✅ Automatic code splitting → Loads only required JS.
+✅ Tree shaking & minification → Removes unused code.
+
+📌 How Parcel Works
+Takes an entry file (index.html or index.js).
+Automatically detects dependencies.
+Optimizes and bundles everything (JS, CSS, images).
+Outputs an optimized build.
+
+● -What is `.parcel-cache`
+The .parcel-cache folder is a temporary cache directory created by Parcel to store processed files and speed up subsequent builds.
+
+🚀 Why Does Parcel Use .parcel-cache?
+Parcel is designed to be fast, and rebuilding everything from scratch every time would be inefficient. Instead, it uses caching to reuse previously processed files, reducing build times significantly.
+
+● -What is `npx` ?
+npx (Node Package eXecute) is a command-line tool that comes with Node.js (starting from npm v5.2+) and is used to execute Node.js packages without globally installing them.
+
+● - What is difference between `dependencies` vs `devDependencies`
+When managing a Node.js or frontend project with npm or yarn, you’ll see two types of dependencies in package.json:
+
+Type  		| Purpose
+---------------------------------------------------------------------------------------
+dependencies	| Required for the app to run in production
+devDependencies	| Only needed for development, testing, and building
+---------------------------------------------------------------------------------------
+
+● - What is Tree Shaking?
+Tree Shaking is an optimization technique used in JavaScript bundlers (like Webpack, Rollup, Parcel) to remove unused code (dead code) from the final bundle. This helps reduce file size and improve app performance.
+
+● - What is Hot Module Replacement?
+Hot Module Replacement (HMR) is a feature in modern JavaScript bundlers (like Webpack, Vite, Parcel) that allows updating modules in a running application without a full page reload.
+
+🔹 Why is this useful?
+
+Faster development 🚀 (No need to refresh manually).
+Preserves application state 🔄 (No loss of UI state, form inputs, etc.).
+Instant updates ⚡ (Only changed modules reload, reducing downtime).
+📌 How Does HMR Work?
+You edit a file (e.g., App.js in React).
+The bundler detects the change and compiles only the modified module.
+The new module replaces the old one without refreshing the browser.
+The app keeps its state while applying the updates.
+
+● - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words.
+Parcel is a zero-config bundler that makes web development fast, simple, and efficient. Here are my top 5 favorite superpowers of Parcel:
+
+1️⃣ 🚀 Zero Configuration (Auto Magic 🔮)
+2️⃣ ⚡ Super Fast Compilation (Multi-Core Processing)
+3️⃣ 🔥 Built-in Hot Module Replacement (HMR)
+4️⃣ 📦 Tree Shaking & Code Splitting
+5️⃣ ✅ Out-of-the-Box Support for Multiple Languages (JS, TS, SCSS, JSX, etc.)
+
+1️⃣ 🚀 Zero Configuration (Auto Magic 🔮)
+Parcel works out of the box with zero configuration. Unlike Webpack, you don’t need a webpack.config.js file or extra plugins.
+
+💡 How it works:
+
+Just install Parcel and run your app.
+Parcel automatically detects dependencies and optimizes the build.
+It even auto-installs missing dependencies (like Babel or PostCSS).
+
+📌 Why is this cool?
+
+No need to spend hours configuring Webpack.
+Saves time for developers.
+2️⃣ ⚡ Super Fast Compilation (Multi-Core Processing)
+Parcel is blazing fast ⚡ because it uses multi-core processing and caching.
+
+💡 Why does this matter?
+
+Traditional bundlers process files one at a time → slow.
+Parcel processes files in parallel → much faster builds.
+Uses caching to avoid unnecessary recompilation.
+✅ Example:
+
+First build: 5 seconds
+Rebuild with cache: 0.5 seconds 😲
+📌 Why is this cool?
+
+Faster development = happier developers.
+Saves time in large projects.
+✅ Out-of-the-Box Support for Multiple Languages
+Parcel supports JavaScript, TypeScript, SCSS, LESS, JSX, Vue, Svelte, Rust, and more without extra configuration.
+
+✅ Example:
+
+Write .ts, .scss, or .vue files without installing extra loaders.
+Parcel automatically compiles and bundles them.
+📌 Why is this cool?
+
+No need to install plugins like Babel, PostCSS, or TypeScript loaders.
+Everything just works automatically.
+
+● - What is the difference between `package.json` and `package-lock.json`?
+Both package.json and package-lock.json are essential files in a Node.js project for managing dependencies, but they serve different purposes.
+1️⃣ package.json 📦
+Purpose: Defines the project’s metadata, scripts, and dependencies.
+
+✅ Key Features:
+
+Lists the dependencies with version ranges (e.g., ^1.2.3 or ~1.2.3).
+Includes project metadata (name, version, description).
+Defines scripts (e.g., start, build, test).
+Specifies engines (Node.js version requirements).
+
+2️⃣ package-lock.json 🔒
+Purpose: Locks the exact versions of installed dependencies for consistency.
+
+✅ Key Features:
+
+Records the exact versions of all dependencies and sub-dependencies.
+Prevents unexpected version updates when running npm install on different machines.
+Speeds up installations by using a cached structure.
+Ensures everyone in a team gets the same dependencies.
+📊 Quick Comparison Table
+
+Feature                     | package.json 📦                     | package-lock.json 🔒
+----------------------------|----------------------------------   |---------------------------------
+Purpose                     | Defines dependencies & project info | Locks exact versions of dependencies
+Versioning                  | Uses semantic versioning (^ or ~)   | Stores exact versions
+Tracks sub-dependencies?    | ❌ No                              | ✅ Yes
+Affects installations?      | ✅ Yes                             | ✅ Yes, ensures consistency
+Should be committed to Git? | ✅ Yes                             | ✅ Yes (to lock dependencies)
+
+
+● - Why should I not modify `package-lock.json`?
+The package-lock.json file is automatically generated and managed by NPM. Modifying it manually can cause issues in dependency management and lead to inconsistencies. 
+

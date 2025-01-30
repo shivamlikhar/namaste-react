@@ -1,0 +1,125 @@
+Assisment -01
+----------------
+
+● What is Emmet?
+Emmet is a plugin that helps developers write HTML, CSS, and JSX faster using abbreviations that expand into full code snippets.
+
+It’s built into many code editors like VS Code, Sublime Text, Atom, and WebStorm, making front-end development much faster.
+
+● How Does Emmet Work?
+Emmet uses shortcuts (abbreviations) that expand into full HTML or CSS code when you press Tab or Enter.
+
+Example: HTML Expansion
+Emmet Abbreviation	Expands to
+div	<div></div>
+div.container	<div class="container"></div>
+ul>li*3	<ul> <li></li> <li></li> <li></li> </ul>
+a[href="https://google.com"]	<a href="https://google.com"></a>
+
+● Difference between a Library and Framework?
+
+
+Feature          | Library 🏛️                                      | Framework 🏗️
+----------------|------------------------------------------------|---------------------------------------------------
+Definition      | A collection of reusable functions or modules  | A complete structure that provides rules, tools, 
+                | to perform specific tasks.                     | and patterns for building applications.
+----------------|------------------------------------------------|---------------------------------------------------
+Control Flow    | You call the library (developer has control).  | Framework calls your code (inversion of control).
+----------------|------------------------------------------------|---------------------------------------------------
+Flexibility     | More flexible—you can pick and choose          | More opinionated—enforces structure and patterns.
+                | what to use.                                   |
+----------------|------------------------------------------------|---------------------------------------------------
+Example         | jQuery, Lodash, React (UI Library), D3.js.     | Angular, Vue, Next.js, Django, Spring.
+----------------|------------------------------------------------|---------------------------------------------------
+Learning Curve  | Easier to learn since you use only what        | Steeper learning curve as you must follow its rules.
+                | you need.                                      |
+----------------|------------------------------------------------|---------------------------------------------------
+Use Case        | Helps solve specific problems, like DOM        | Provides a complete solution, including routing, 
+                | manipulation or state management.              | state management, and architecture.
+Library → You are in control. You call functions when needed.
+Framework → It is in control. It provides structure and calls your code.
+
+● What is CDN? Why do we use it?
+A CDN (Content Delivery Network) is a network of distributed servers that deliver web content (HTML, CSS, JavaScript, images, videos, etc.) faster by caching it in multiple locations worldwide.
+
+Instead of loading resources directly from the main server, a CDN serves them from the nearest server to the user, improving speed and performance.
+
+● Why Use a CDN?
+✅ Faster Load Times – Delivers content from the nearest server, reducing latency.
+✅ Reduced Server Load – Offloads traffic from the main server.
+✅ Improved Availability – Handles high traffic & prevents downtime.
+✅ Better Security – Protects against DDoS attacks & caches secure content.
+✅ SEO Benefits – Faster pages improve search engine rankings.
+
+● Why is React Called "React"?
+React is named "React" because it is designed to react to changes in data and update the UI efficiently.
+
+💡 Why the Name "React"?
+	Reactivity to State Changes
+
+When the state or props in a React component change, React reacts by updating only the necessary parts of the UI (Virtual DOM diffing).
+Efficient Rendering
+
+Instead of reloading the entire page, React reacts to data changes and updates only the components that need it.
+Declarative & Component-Based Approach
+
+React lets you describe how the UI should look based on the current state, and it handles the updates reactively.
+
+● What is crossorigin in the <script> Tag?
+The crossorigin attribute in a <script> tag is used when loading external JavaScript files from a different origin (domain, protocol, or port). It controls how browsers handle CORS (Cross-Origin Resource Sharing) when requesting the script.
+
+📌 Why Use crossorigin?
+When you load a script from another domain, the browser applies CORS policies to determine if it can be fetched and executed properly.
+
+Security: Ensures that scripts loaded from external sources are handled correctly.
+Performance: Enables cross-origin caching, preventing redundant downloads.
+Error Handling: Allows fetching scripts without blocking console error logs.
+
+
+● What is diference between React and ReactDOM?
+Feature        | React 🏛️                                    | ReactDOM 🌍
+---------------------------------------------------------------------------
+Definition     | Core library for building UI components.    | Provides methods to render components into the DOM.
+Purpose        | Defines components, state, hooks, and JSX.  | Connects React components to the browser DOM.
+Used In        | Both client-side and server-side (e.g.,     | Only used in web applications (browser-specific).
+		| Next.js, React Native).		
+Example        | useState, useEffect, createElement.         | createRoot, render, hydrateRoot.
+Import From    | import React from 'react';                  | import ReactDOM from 'react-dom/client';
+
+● What is difference between react.development.js and react.production.js files via CDN?
+When you're including React via a CDN, you often have two versions of the React library: react.development.js and react.production.js. They serve different purposes and are optimized for different environments.
+Key Differences :
+---------------------------------------------------------------------------------------------
+Feature               | react.development.js ⚙️                      | react.production.js 🚀
+---------------------------------------------------------------------------------------------
+Purpose              | Used for development environments.            | Used for production environments.
+Size                 | Larger, contains more code (e.g., warnings,   | Smaller, contains only the necessary code for efficient execution.
+			| error messages, debugging tools). 
+Error Handling       | Provides detailed error messages, warnings,   | Minimal error handling to keep the bundle size small, designed for 			and checks to help with debugging.           | optimal performance.
+Performance          | Less optimized, as it's focused on debugging  | Highly optimized for faster performance in production.
+			 and development.
+Intended Usage       | Used during development to help debug, test,  | Used in live, production environments for best performance.
+			 and improve code.
+Example Usage        | <script src="https://unpkg.com/react@18       | <script src="https://unpkg.com/react@18/umd/react.production
+						/umd/react.development.js"></script>	     | .min.js"></script>
+---------------------------------------------------------------------------------------------
+
+● What is async and defer?
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| Feature              | async ⚡                                                | defer ⏳                                             |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| Loading              | Loads asynchronously while parsing HTML.                | Loads asynchronously while parsing HTML.             |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| Execution Order      |Executes immediately once downloaded(no guaranteed order)| Executes in order of appearance after HTML is parsed. |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| When Executed        | Before the HTML document is fully parsed.               | After the HTML document is parsed.                   |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| Use Case             | Best for independent scripts (e.g., analytics, ads).    | Best for dependent scripts (e.g., DOM manipulation). |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+| Browser Compatibility| Supported in modern browsers.                           | Supported in modern browsers.                        |
++----------------------+----------------------------------------------------------+------------------------------------------------------+
+
+async: Loads and executes the script immediately after it is downloaded, without waiting for the HTML document to be parsed. 
+		Use for independent scripts.
+defer: Loads the script asynchronously but delays execution until the HTML document is fully parsed, ensuring the script 
+		executes in order. Use for dependent scripts.
