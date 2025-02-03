@@ -1,3 +1,36 @@
 #heading{
     color: blue;
 }
+.heading{
+    color: red;
+}
+.NavBar{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0;
+    padding: 0px;
+    vertical-align: middle;
+    padding-bottom: 15px;
+}
+.logo{
+    text-align: left;
+    width: 20%;
+}
+.SearchBox{
+    width: 80%;
+    text-align: center;
+}
+.searchBtn{
+    width: 20%;
+}
+.search{
+    text-align: center;
+    width: 60%;
+    display: flex;
+    gap: 1px;
+}
+.user{
+    text-align: right;
+    width: 20%;
+}
