@@ -142,3 +142,12 @@
   margin-top: -60px; 
   text-align-last: right;
 }
+.filter{
+  text-align: center;
+}
+.filter > .filter-btn{
+  padding: 5px 8px;
+  font-weight: 600;
+  margin: 10px;
+  cursor: pointer;
+}
