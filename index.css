@@ -1,36 +1,144 @@
-#heading{
-    color: blue;
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #211715;
+  padding: 0% 3%;
 }
-.heading{
-    color: red;
+.Header > .logo {
+  padding-left: 15px;
 }
-.NavBar{
-    width: 100%;
-    height: auto;
-    display: flex;
-    margin: 0;
-    padding: 0px;
-    vertical-align: middle;
-    padding-bottom: 15px;
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0px 25px;
 }
-.logo{
-    text-align: left;
-    width: 20%;
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+  color: white;
 }
-.SearchBox{
-    width: 80%;
-    text-align: center;
+
+.card {
+  border: 1px solid #b02408;
+  width: 320px;
+  height: auto;
+  background-color: white;
+  border-radius: 7px;
+  transition: background-color 0.3s ease-in-out;
 }
-.searchBtn{
-    width: 20%;
+.card:hover {
+  /* border: 3px solid #b02408; */
+  background-color: rgb(225, 187, 187);
+
 }
-.search{
-    text-align: center;
-    width: 60%;
-    display: flex;
-    gap: 1px;
+.card > img {
+  margin: 10px 10px;
 }
-.user{
-    text-align: right;
-    width: 20%;
+.card > .card-name {
+  padding-left: 20px;
+  margin-top: -40px;
+  font-weight: 700;
+  font-style: bold;
+  color: white;
+}
+.card .card-spices {
+  text-wrap: wrap;
+}
+.card .card-spices ul {
+  /* margin-top: -20px; */
+  display: flex;
+  list-style-type: none;
+  text-align: left;
+  margin-left: -20px;
+  text-wrap: wrap;
+  gap: 7%;
+}
+.card .card-spices ul li {
+  text-wrap: nowrap;
+  color: #b02408;
+}
+.card-details {
+  display: flex;
+  margin-top: -10px;
+  margin-left: 10px;
+  padding: 0px 10px;
+  padding-bottom: 12px;
+  align-items: self-end;
+  justify-content: space-between;
+}
+.card-details > .rating {
+  padding: 0.5px 5px;
+  color: black;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.card > .bookNow-btn {
+  width: 90%;
+  padding: 0% 5%;
+  padding-bottom: 5%;
+  cursor: pointer;
+}
+.bookNow-btn > button {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: rgb(27, 166, 114);;
+}
+.body{
+  padding: 0% 5%;
+}
+.body > .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.body > .card-heading{
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.food-options{
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  text-align: -webkit-center;
+  justify-content: center;
+}
+.order-type{
+  border: 1px solid black;
+  width: 270px;
+  border-radius: 10px;
+}
+.order-Options{
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 20px;
+}
+.order-Options > h1{
+  text-wrap: nowrap;
+}
+.order-Options > h4,h5{
+  /* margin-top: -15px; */
+  text-wrap: nowrap;
+}
+.order-type > .order-img{
+  justify-content: space-between;
+  display: flex;
+}
+.order-type > .order-img > .text{
+  font-size: 30px;
+  margin-top: 0px;
+  padding-left: 20px; 
+  text-align-last: right;
+}
+.order-type > .order-img > .image{
+  font-size: 30px;
+  margin-top: -60px; 
+  text-align-last: right;
 }
