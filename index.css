@@ -14,8 +14,20 @@
 }
 .nav-items > ul > li {
   padding: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 10px;
   color: white;
+}
+.nav-items > ul > li > button{
+  color: black;
+  margin-top: -5px;
+  padding: 5px 8px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 4px;
+  font-size: 15px;
+  background-color: white;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .card {
@@ -26,10 +38,25 @@
   border-radius: 7px;
   transition: background-color 0.3s ease-in-out;
 }
+.shimmer-card {
+  width: 320px;
+  height: 200px;
+  border-radius: 7px;
+  transition: background-color 0.3s ease-in-out;
+  background-color: rgb(195, 195, 195);
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350%
+    100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    -webkit-mask-position: left;
+  }
+}
 .card:hover {
   /* border: 3px solid #b02408; */
   background-color: rgb(225, 187, 187);
-
 }
 .card > img {
   margin: 10px 10px;
@@ -88,9 +115,9 @@
   color: white;
   font-weight: bold;
   padding: 5px 10px;
-  background-color: rgb(27, 166, 114);;
+  background-color: rgb(27, 166, 114);
 }
-.body{
+.body {
   padding: 0% 5%;
 }
 .body > .card-container {
@@ -98,56 +125,71 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.body > .card-heading{
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5% 5%;
+}
+.body > .card-heading {
   font-weight: bold;
   font-size: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.food-options{
+.food-options {
   width: 100%;
   display: flex;
   gap: 25px;
   text-align: -webkit-center;
   justify-content: center;
 }
-.order-type{
+.order-type {
   border: 1px solid black;
   width: 270px;
   border-radius: 10px;
 }
-.order-Options{
+.order-Options {
   text-align: left;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 20px;
 }
-.order-Options > h1{
+.order-Options > h1 {
   text-wrap: nowrap;
 }
-.order-Options > h4,h5{
+.order-Options > h4,
+h5 {
   /* margin-top: -15px; */
   text-wrap: nowrap;
 }
-.order-type > .order-img{
+.order-type > .order-img {
   justify-content: space-between;
   display: flex;
 }
-.order-type > .order-img > .text{
+.order-type > .order-img > .text {
   font-size: 30px;
   margin-top: 0px;
-  padding-left: 20px; 
+  padding-left: 20px;
   text-align-last: right;
 }
-.order-type > .order-img > .image{
+.order-type > .order-img > .image {
   font-size: 30px;
-  margin-top: -60px; 
+  margin-top: -60px;
   text-align-last: right;
 }
-.filter{
+.filter {
   text-align: center;
 }
-.filter > .filter-btn{
+.filter > .filter-btn {
   padding: 5px 8px;
   font-weight: 600;
   margin: 10px;
   cursor: pointer;
+}
+.filter > .search{
+  margin: 5px;
+  padding: 5px;
+}
+.filter .search input,button{
+  padding: 3px 6px;
+  margin: 0px 2px;
 }

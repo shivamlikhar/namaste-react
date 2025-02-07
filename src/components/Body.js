@@ -1,46 +1,98 @@
 import RestaurantCards from "./RestaurantCards";
 import resObject from "../utils/resObject";
 import OrderOption from "./OrderOption";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filters from "./Filters";
+import { URL, PAYLOAD } from "../service/zomatoData";
+import ShimmerUI from "./ShimmerUI";
 
 const Body = () => {
-  const [card, setListOfCard] = useState(resObject.data.cards);
-  return (
+  const [card, setListOfCard] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [searchText, setSearchText] = useState("");
+  const fetchData = async () => {
+    const data = await fetch(URL);
+
+    let response = await data.json();
+    setListOfCard(
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    setFilteredRestaurant(
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  };
+
+  // Conditional rendering
+  // if (card.length === 0) {
+  //   return (
+  //       <ShimmerUI />
+  //   );
+  // }
+
+  return card.length === 0 ? (
+    <ShimmerUI />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="searchBox"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filterRes = card?.filter((res) =>
+                res?.info?.name?.toLowerCase().includes(searchText)
+              );
+              setFilteredRestaurant(filterRes);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <Filters
           label="Top Rated Restaurents ⭐"
-          filterCondition={resObject.data.cards.filter((res) => res.rating > 4)}
-          setListofCards={setListOfCard}
+          filterCondition={card.filter((res) => res.info.avgRating > 4.5)}
+          setListofCards={setFilteredRestaurant}
         />
         <Filters
           label="Chinese 🍜"
-          filterCondition={resObject.data.cards.filter((res) =>
-            res.cusins.some((resipe) => resipe === "Chinese")
+          filterCondition={card.filter((res) =>
+            res?.info?.cuisines?.some((resipe) => resipe === "Chinese")
           )}
-          setListofCards={setListOfCard}
+          setListofCards={setFilteredRestaurant}
         />
         <Filters
           label="Breverages 🍵"
-          filterCondition={resObject.data.cards.filter((res) =>
-            res.cusins.some((drinks) => drinks === "Breverages")
+          filterCondition={card.filter((res) =>
+            res?.info?.cuisines?.some((drinks) => drinks === "Beverages")
           )}
-          setListofCards={setListOfCard}
+          setListofCards={setFilteredRestaurant}
         />
         <Filters
-          label="Fast Food 🍔"
-          filterCondition={resObject.data.cards.filter((resipe) =>
-            resipe.cusins.some((res) => res === "Fast Food")
+          label="Home Food 🍔"
+          filterCondition={card.filter((resipe) =>
+            resipe?.info?.cuisines?.some((res) => res === "Home Food")
           )}
-          setListofCards={setListOfCard}
+          setListofCards={setFilteredRestaurant}
         />
         <Filters
-          label="Biryani 🍛"
-          filterCondition={resObject.data.cards.filter((resipe) =>
-            resipe.cusins.some((res) => res === "Biryani")
+          label="Punjabi 🍛"
+          filterCondition={card.filter((resipe) =>
+            resipe?.info?.cuisines?.some((res) => res === "Punjabi")
           )}
-          setListofCards={setListOfCard}
+          setListofCards={setFilteredRestaurant}
         />
       </div>
       <div className="food-options">
@@ -50,12 +102,12 @@ const Body = () => {
       </div>
       <h3 className="card-heading">Discover best restaurants on Dineout</h3>
       <div className="card-container">
-        {card.map((restaurent) => (
-          <RestaurantCards key={restaurent?.id} resData={restaurent} />
+        {filteredRestaurant.map((restaurent) => (
+          <RestaurantCards key={restaurent?.info?.id} resData={restaurent} />
         ))}
-        {/* <RestaurantCards resData={resObject.data.cards[0]} /> */}
-        {/* Passing Properies to the Component */}
       </div>
+      {/* <RestaurantCards resData={resObject.data.cards[0]} /> */}
+      {/* Passing Properies to the Component */}
     </div>
   );
 };
