@@ -1,23 +1,52 @@
 import React from "react";
-import ReactDom from "react-dom/client";
+import ReactDOM from "react-dom/client";
+
+import Error from "./components/Error";
 import Header from "./components/Header";
 import Body from "./components/Body";
-// const cardNameStyle = {
-//   color: "black",
-// };
+import About from "./components/About";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+import Contact from "./components/Contact";
+import RestaurentMenu from "./components/RestaurentMenu";
 
 const AppLayout = () => {
   return (
     <div className="appLayout">
-      <div>
-        <Header />
-        <div className="body-container">
-          <Body />
-        </div>
+      <Header />
+      <div className="body-container">
+        <Outlet/>
       </div>
     </div>
   );
 };
 
-const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+// ✅ Define router properly
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path:"/",
+        element: <Body/>
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurent/:resId",
+        element: <RestaurentMenu />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+
+// ✅ Correct way to get the root element
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter} />);

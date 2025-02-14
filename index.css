@@ -14,15 +14,20 @@
 }
 .nav-items > ul > li {
   padding: 10px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 10px;
   color: white;
+  text-decoration: none;
 }
-.nav-items > ul > li > button{
+.nav-items > ul > li > a {
+  text-decoration: none;
+  color: aliceblue;
+}
+.nav-items > ul > li > button {
   color: black;
   margin-top: -5px;
   padding: 5px 8px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-radius: 4px;
   font-size: 15px;
   background-color: white;
@@ -70,11 +75,13 @@
 }
 .card .card-spices {
   text-wrap: wrap;
+  text-decoration: underline;
+  color: #211715;
 }
 .card .card-spices ul {
   /* margin-top: -20px; */
   display: flex;
-  list-style-type: none;
+  /* list-style-type: none; */
   text-align: left;
   margin-left: -20px;
   text-wrap: wrap;
@@ -82,7 +89,8 @@
 }
 .card .card-spices ul li {
   text-wrap: nowrap;
-  color: #b02408;
+  text-decoration: underline;
+  /* color: #b02408; */
 }
 .card-details {
   display: flex;
@@ -185,11 +193,84 @@ h5 {
   margin: 10px;
   cursor: pointer;
 }
-.filter > .search{
+.filter > .search {
   margin: 5px;
   padding: 5px;
 }
-.filter .search input,button{
+.filter .search input,
+button {
   padding: 3px 6px;
   margin: 0px 2px;
+}
+.res-card {
+  display: flex;
+  border-radius: 7px;
+  border: 1px solid black;
+  padding: 1%;
+  gap: 3%;
+  width: 90%;
+  margin: 1% 5%;
+}
+.res-img{
+  width: 10%;
+}
+.res-rating{
+  text-align: right;
+}
+.res-data{
+  width: 90%;
+}
+.res-data > .res-desc {
+  justify-content: space-between;
+  align-items: self-end;
+  width: 90%;
+  /* margin-top: -10px; */
+  margin-left: 10px;
+  padding: 0 10px 12px;
+  display: flex;
+  /* background-color: red; */
+}
+.res-desc > .res-details {
+  width: 10%;
+  /* display: none; */
+}
+.res-ratings{
+  width: 20%;
+  text-align: right;
+}
+.menu .menu-heading{
+  text-align: center;
+  padding: 0.5rem;
+}
+.menu-card{
+  border-radius: 7px;
+  padding: 1%;
+  gap: 3%;
+  width: 90%;
+  margin: 1% 5%;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif
+}
+.menu-details{
+  width: 80%;
+}
+.menu-details > .dish-rating{
+  font-size: 14px;
+  font-weight: 600;
+  color: green;
+}
+.menu-image{
+  width: 20%;
+}
+.menu-image > img{
+  height: 8rem;
+  width: 8.5rem;
+  margin-top: 1rem;
+  border-radius: 7px;
+}
+.menu-details > .dish-description{
+  font-weight: 100;
+  color: rgb(119, 112, 112);
+}
+.parent{
+  display: flex;
 }

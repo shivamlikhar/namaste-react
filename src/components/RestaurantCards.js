@@ -19,7 +19,7 @@ const RestaurantCards = (props) => {
       <span className="card-details">{resData?.info?.costForTwo}</span>
       <div className="bookNow-btn">
         <button>
-          <span className="text">Book Now</span> <span className="icon">⩥</span>
+          <span className="text">Order Now</span> <span className="icon">⩥</span>
         </button>
       </div>
     </div>

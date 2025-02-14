@@ -3,8 +3,9 @@ import resObject from "../utils/resObject";
 import OrderOption from "./OrderOption";
 import { useEffect, useState } from "react";
 import Filters from "./Filters";
-import { URL, PAYLOAD } from "../service/zomatoData";
+import { URL } from "../service/zomatoData";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router";
 
 const Body = () => {
   const [card, setListOfCard] = useState([]);
@@ -103,7 +104,7 @@ const Body = () => {
       <h3 className="card-heading">Discover best restaurants on Dineout</h3>
       <div className="card-container">
         {filteredRestaurant.map((restaurent) => (
-          <RestaurantCards key={restaurent?.info?.id} resData={restaurent} />
+          <Link key={restaurent?.info?.id} to={"/restaurent/" + restaurent?.info?.id}><RestaurantCards resData={restaurent} /></Link>
         ))}
       </div>
       {/* <RestaurantCards resData={resObject.data.cards[0]} /> */}
