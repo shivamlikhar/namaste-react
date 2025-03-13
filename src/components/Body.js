@@ -20,8 +20,7 @@ const Body = () => {
 
     let response = await data.json();
     setListOfCard(
-      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
+      response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
       response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -104,7 +103,7 @@ const Body = () => {
       <h3 className="card-heading">Discover best restaurants on Dineout</h3>
       <div className="card-container">
         {filteredRestaurant.map((restaurent) => (
-          <Link key={restaurent?.info?.id} to={"/restaurent/" + restaurent?.info?.id}><RestaurantCards resData={restaurent} /></Link>
+          <Link className="link" key={restaurent?.info?.id} to={"/restaurent/" + restaurent?.info?.id}><RestaurantCards resData={restaurent} /></Link>
         ))}
       </div>
       {/* <RestaurantCards resData={resObject.data.cards[0]} /> */}

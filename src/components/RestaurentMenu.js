@@ -2,31 +2,33 @@ import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { useParams } from "react-router";
 import { MENU_URL } from "../service/zomatoData";
+import useRestaurentMenu from "../utils/useRestaurentMenu";
 
 const RestaurentMenu = () => {
-  const [restaurent, setRestaurent] = useState(null);
+  // const [restaurent, setRestaurent] = useState(null);
   //   const [menu, setMenu] = useState();
 
   
   const { resId } = useParams();
-  console.log(resId)
-  useEffect(() => {
-    fetchMenu();
-  }, []);
 
-  const fetchMenu = async () => {
-    try {
-      const data = await fetch(
-        MENU_URL + resId +"&catalog_qa=undefined&submitAction=ENTER"
-      );
-      const json = await data.json();
-      const ResData = json?.data || [];
-      setRestaurent(ResData);
-    } catch (error) {
-      console.error("Error fetching menu:", error);
-    }
-  };
-  console.log(restaurent);
+  const restaurent = useRestaurentMenu(resId); // how to get data is abstracted for RestaurentMenu Component becoz this operation done by customHook that is useRestaurentMenu
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
+
+  // const fetchMenu = async () => {
+  //   try {
+  //     const data = await fetch(
+  //       MENU_URL + resId +"&catalog_qa=undefined&submitAction=ENTER"
+  //     );
+  //     const json = await data.json();
+  //     const ResData = json?.data || [];
+  //     setRestaurent(ResData);
+  //   } catch (error) {
+  //     console.error("Error fetching menu:", error);
+  //   }
+  // };
+  
   //   const { menuData } = menu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
   // Show shimmer UI while menu is loading
   if (!restaurent) return <ShimmerUI />;
