@@ -15,7 +15,10 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/instamart">INSTAMART</Link>
+          </li>
+          <li>
+            <Link to="/">FOOD DELIVERY</Link>
           </li>
           <li>
             <Link to="/about">About Us</Link>

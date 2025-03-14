@@ -1,3 +1,5 @@
+/* @import "tailwindcss"; */
+
 .Header {
   display: flex;
   justify-content: space-between;
@@ -273,4 +275,16 @@ button {
 }
 .parent{
   display: flex;
+}
+.onlineStatus{
+  display: grid;
+  width: 99%;
+  text-align: center;
+  background-color: #b02408;
+  color: white;
+  padding: 0.5rem;
+}
+.link{
+  text-decoration: none;
+  color: #000;
 }

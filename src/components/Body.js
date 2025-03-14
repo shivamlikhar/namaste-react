@@ -6,6 +6,7 @@ import Filters from "./Filters";
 import { URL } from "../service/zomatoData";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [card, setListOfCard] = useState([]);
@@ -34,7 +35,8 @@ const Body = () => {
   //       <ShimmerUI />
   //   );
   // }
-
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false) return <span className="onlineStatus">Connection lost</span>
   return card.length === 0 ? (
     <ShimmerUI />
   ) : (
