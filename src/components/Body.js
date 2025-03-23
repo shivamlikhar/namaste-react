@@ -1,16 +1,18 @@
 import RestaurantCards from "./RestaurantCards";
 import resObject from "../utils/resObject";
 import OrderOption from "./OrderOption";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Filters from "./Filters";
 import { URL } from "../service/zomatoData";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   const [card, setListOfCard] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const { setUserName, loggedInUser } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -36,7 +38,7 @@ const Body = () => {
   //   );
   // }
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus === false) return <span className="onlineStatus">Connection lost</span>
+  if (onlineStatus === false) return <span className="onlineStatus">Connection lost</span>
   return card.length === 0 ? (
     <ShimmerUI />
   ) : (
@@ -62,6 +64,18 @@ const Body = () => {
           >
             Search
           </button>
+        </div>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="User Name"
+            className="searchBox"
+            value={loggedInUser} // this loggedInUser is Synch with userContext if we change from here then it will update everywher across the app
+            onChange={(e) => {
+              setUserName(e.target.value); 
+            }}
+          />
+          
         </div>
         <Filters
           label="Top Rated Restaurents ⭐"
@@ -105,7 +119,9 @@ const Body = () => {
       <h3 className="card-heading">Discover best restaurants on Dineout</h3>
       <div className="card-container">
         {filteredRestaurant.map((restaurent) => (
-          <Link className="link" key={restaurent?.info?.id} to={"/restaurent/" + restaurent?.info?.id}><RestaurantCards resData={restaurent} /></Link>
+          <Link className="link" key={restaurent?.info?.id} to={"/restaurent/" + restaurent?.info?.id}>
+            <RestaurantCards resData={restaurent} />
+          </Link>
         ))}
       </div>
       {/* <RestaurantCards resData={resObject.data.cards[0]} /> */}

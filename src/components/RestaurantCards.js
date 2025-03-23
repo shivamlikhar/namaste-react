@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import UserContext from "../utils/userContext";
+
 const RestaurantCards = (props) => {
+  const {loggedInUser} = useContext(UserContext);
   const { resData } = props;
   // const { cloudinaryImageId, name, cuisines, areaName, avgRating, costForTwo } = resData;
   return (
@@ -17,6 +21,7 @@ const RestaurantCards = (props) => {
         <span className="rating">{resData?.info?.avgRating} ⭐</span>
       </div>
       <span className="card-details">{resData?.info?.costForTwo}</span>
+      <span className="card-details">User : {loggedInUser}</span>
       <div className="bookNow-btn">
         <button>
           <span className="text">Order Now</span> <span className="icon">⩥</span>
@@ -25,5 +30,17 @@ const RestaurantCards = (props) => {
     </div>
   );
 };
+
+// Higher Order Function -  which take conponent as an argument and return a new component
+// export const promotedRestaurentCards = (RestaurantCards) => {
+//   return (props)=>{
+//     return(
+//       <div>
+//         <p>Promoted</p>
+//         <RestaurantCards {...props}/>
+//       </div>
+//     )
+//   }
+// }
 
 export default RestaurantCards;

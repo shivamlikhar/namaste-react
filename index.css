@@ -1,31 +1,42 @@
 /* @import "tailwindcss"; */
-
 .Header {
   display: flex;
   justify-content: space-between;
   background-color: #211715;
   padding: 0% 3%;
 }
-.Header > .logo {
+.category-title{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.title{
+  font-size: 19px;
+  font-weight: bold;
+}
+.Header>.logo {
   padding-left: 15px;
 }
-.nav-items > ul {
+.nav-items>ul {
   display: flex;
   list-style-type: none;
   padding: 0px 25px;
 }
-.nav-items > ul > li {
+
+.nav-items>ul>li {
   padding: 10px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 10px;
   color: white;
   text-decoration: none;
 }
-.nav-items > ul > li > a {
+
+.nav-items>ul>li>a {
   text-decoration: none;
   color: aliceblue;
 }
-.nav-items > ul > li > button {
+
+.nav-items>ul>li>button {
   color: black;
   margin-top: -5px;
   padding: 5px 8px;
@@ -45,41 +56,47 @@
   border-radius: 7px;
   transition: background-color 0.3s ease-in-out;
 }
+
 .shimmer-card {
   width: 320px;
   height: 200px;
   border-radius: 7px;
   transition: background-color 0.3s ease-in-out;
   background-color: rgb(195, 195, 195);
-  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350%
-    100%;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
   background-repeat: no-repeat;
   animation: shimmer 2.5s infinite;
 }
+
 @keyframes shimmer {
   100% {
     -webkit-mask-position: left;
   }
 }
+
 .card:hover {
   /* border: 3px solid #b02408; */
   background-color: rgb(225, 187, 187);
 }
-.card > img {
+
+.card>img {
   margin: 10px 10px;
 }
-.card > .card-name {
+
+.card>.card-name {
   padding-left: 20px;
   margin-top: -40px;
   font-weight: 700;
   font-style: bold;
   color: white;
 }
+
 .card .card-spices {
   text-wrap: wrap;
   text-decoration: underline;
   color: #211715;
 }
+
 .card .card-spices ul {
   /* margin-top: -20px; */
   display: flex;
@@ -89,11 +106,13 @@
   text-wrap: wrap;
   gap: 7%;
 }
+
 .card .card-spices ul li {
   text-wrap: nowrap;
   text-decoration: underline;
   /* color: #b02408; */
 }
+
 .card-details {
   display: flex;
   margin-top: -10px;
@@ -103,19 +122,22 @@
   align-items: self-end;
   justify-content: space-between;
 }
-.card-details > .rating {
+
+.card-details>.rating {
   padding: 0.5px 5px;
   color: black;
   font-weight: 700;
   border-radius: 5px;
 }
-.card > .bookNow-btn {
+
+.card>.bookNow-btn {
   width: 90%;
   padding: 0% 5%;
   padding-bottom: 5%;
   cursor: pointer;
 }
-.bookNow-btn > button {
+
+.bookNow-btn>button {
   width: 100%;
   text-align: right;
   display: flex;
@@ -127,25 +149,30 @@
   padding: 5px 10px;
   background-color: rgb(27, 166, 114);
 }
+
 .body {
   padding: 0% 5%;
 }
-.body > .card-container {
+
+.body>.card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 5% 5%;
 }
-.body > .card-heading {
+
+.body>.card-heading {
   font-weight: bold;
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 .food-options {
   width: 100%;
   display: flex;
@@ -153,57 +180,69 @@
   text-align: -webkit-center;
   justify-content: center;
 }
+
 .order-type {
   border: 1px solid black;
   width: 270px;
   border-radius: 10px;
 }
+
 .order-Options {
   text-align: left;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 20px;
 }
-.order-Options > h1 {
+
+.order-Options>h1 {
   text-wrap: nowrap;
 }
-.order-Options > h4,
+
+.order-Options>h4,
 h5 {
   /* margin-top: -15px; */
   text-wrap: nowrap;
 }
-.order-type > .order-img {
+
+.order-type>.order-img {
   justify-content: space-between;
   display: flex;
 }
-.order-type > .order-img > .text {
+
+.order-type>.order-img>.text {
   font-size: 30px;
   margin-top: 0px;
   padding-left: 20px;
   text-align-last: right;
 }
-.order-type > .order-img > .image {
+
+.order-type>.order-img>.image {
   font-size: 30px;
   margin-top: -60px;
   text-align-last: right;
 }
+
 .filter {
   text-align: center;
 }
-.filter > .filter-btn {
+
+.filter>.filter-btn {
   padding: 5px 8px;
   font-weight: 600;
   margin: 10px;
   cursor: pointer;
 }
-.filter > .search {
+
+.filter>.search {
   margin: 5px;
   padding: 5px;
 }
+
 .filter .search input,
 button {
   padding: 3px 6px;
   margin: 0px 2px;
 }
+
 .res-card {
   display: flex;
   border-radius: 7px;
@@ -213,16 +252,20 @@ button {
   width: 90%;
   margin: 1% 5%;
 }
-.res-img{
+
+.res-img {
   width: 10%;
 }
-.res-rating{
+
+.res-rating {
   text-align: right;
 }
-.res-data{
+
+.res-data {
   width: 90%;
 }
-.res-data > .res-desc {
+
+.res-data>.res-desc {
   justify-content: space-between;
   align-items: self-end;
   width: 90%;
@@ -232,19 +275,23 @@ button {
   display: flex;
   /* background-color: red; */
 }
-.res-desc > .res-details {
+
+.res-desc>.res-details {
   width: 10%;
   /* display: none; */
 }
-.res-ratings{
+
+.res-ratings {
   width: 20%;
   text-align: right;
 }
-.menu .menu-heading{
+
+.menu .menu-heading {
   text-align: center;
   padding: 0.5rem;
 }
-.menu-card{
+
+.menu-card {
   border-radius: 7px;
   padding: 1%;
   gap: 3%;
@@ -252,31 +299,38 @@ button {
   margin: 1% 5%;
   font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif
 }
-.menu-details{
+
+.menu-details {
   width: 80%;
 }
-.menu-details > .dish-rating{
+
+.menu-details>.dish-rating {
   font-size: 14px;
   font-weight: 600;
   color: green;
 }
-.menu-image{
+
+.menu-image {
   width: 20%;
 }
-.menu-image > img{
+
+.menu-image>img {
   height: 8rem;
   width: 8.5rem;
   margin-top: 1rem;
   border-radius: 7px;
 }
-.menu-details > .dish-description{
+
+.menu-details>.dish-description {
   font-weight: 100;
   color: rgb(119, 112, 112);
 }
-.parent{
+
+.parent {
   display: flex;
 }
-.onlineStatus{
+
+.onlineStatus {
   display: grid;
   width: 99%;
   text-align: center;
@@ -284,7 +338,66 @@ button {
   color: white;
   padding: 0.5rem;
 }
-.link{
+
+.link {
   text-decoration: none;
   color: #000;
 }
+
+/* Accordian Starts */
+.restaurant-category {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.restaurant-category:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-category .category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.restaurant-category .category-header .toggle-icon {
+  font-size: 1.5rem;
+  color: #666;
+  transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-category .category-header .toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+.restaurant-category .category-items {
+  margin-top: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.restaurant-category .category-items.visible {
+  display: flex;
+}
+
+.restaurant-category .category-item {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.restaurant-category .category-item:hover {
+  background-color: #f0f0f0;
+}
+/* Accordian Ends */

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { createContext, lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 import Error from "./components/Error";
@@ -8,17 +8,30 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
 import ShimmerUI from "./components/ShimmerUI";
+import UserContext from "./utils/userContext";
 
 const Instamart = lazy(() => import("./components/Instamart"));
-const About = lazy(()=> import("./components/About"));
+const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+  useEffect(() => {
+    const data = {
+      name: "Shivam Likhar",
+    }
+    setUserName(data.name);
+  }, [])
   return (
-    <div className="appLayout">
-      <Header />
-      <div className="body-container">
-        <Outlet />
-      </div>
-    </div>
+    // From userContext.Provide we can provide context data to all compontents in the app which are under this provider
+    // Whatever we enter ib value that first go to userConext context file & update the existing json so that from other 
+    // file they can update the data by using userConext File itself
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>   {/* Here setUserName will fist update the userContext so that we can access it everywhere across the app by using useContext */}
+      < div className="appLayout" >
+        <Header />
+        <div className="body-container">
+          <Outlet />
+        </div>
+      </div >
+    </UserContext.Provider>
   );
 };
 
