@@ -12,7 +12,7 @@ import UserContext from "../utils/userContext";
 const Body = () => {
   const [card, setListOfCard] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  const { setUserName, loggedInUser } = useContext(UserContext);
+  const { setUserName, loggedInUser } = useContext(UserContext); // to update the state value present in app.js
   useEffect(() => {
     fetchData();
   }, []);

@@ -9,6 +9,9 @@ import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
 import ShimmerUI from "./components/ShimmerUI";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import CartItems from "./components/CartItems";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
@@ -21,17 +24,24 @@ const AppLayout = () => {
     setUserName(data.name);
   }, [])
   return (
-    // From userContext.Provide we can provide context data to all compontents in the app which are under this provider
+    // Store works as a props to all the components in the app
+    <Provider store={appStore}>
+
+      {/* // From userContext.Provide we can provide context data to all compontents in the app which are under this provider
     // Whatever we enter ib value that first go to userConext context file & update the existing json so that from other 
-    // file they can update the data by using userConext File itself
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>   {/* Here setUserName will fist update the userContext so that we can access it everywhere across the app by using useContext */}
-      < div className="appLayout" >
-        <Header />
-        <div className="body-container">
-          <Outlet />
-        </div>
-      </div >
-    </UserContext.Provider>
+    // file they can update the data by using userConext File itself */}
+      {/* someContext.Provider provide the existing context value to the component & we can update the exiting value as well by providing 
+    new value to value as a props so that it will get updated to main Context then it will get render into deep components*/}
+      {/* someContext.Consumer is raerly use to read context value, it is used in only class based components */}
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>   {/* Here setUserName will fist update the userContext so that we can access it everywhere across the app by using useContext */}
+        < div className="appLayout" >
+          <Header />
+          <div className="body-container">
+            <Outlet />
+          </div>
+        </div >
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -66,6 +76,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurent/:resId",
         element: <RestaurentMenu />,
+      },
+      {
+        path: "/cart",
+        element: <CartItems />,
       },
     ],
     errorElement: <Error />,

@@ -5,18 +5,22 @@
   background-color: #211715;
   padding: 0% 3%;
 }
-.category-title{
+
+.category-title {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
-.title{
+
+.title {
   font-size: 19px;
   font-weight: bold;
 }
+
 .Header>.logo {
   padding-left: 15px;
 }
+
 .nav-items>ul {
   display: flex;
   list-style-type: none;
@@ -353,6 +357,18 @@ button {
   background-color: #f9f9f9;
   transition: box-shadow 0.3s ease-in-out;
 }
+.cart-body{
+  width: 70%;
+  margin: 0 auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  /* margin: 1rem 0; */
+  padding: 1rem;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease-in-out;
+}
 
 .restaurant-category:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -400,4 +416,19 @@ button {
 .restaurant-category .category-item:hover {
   background-color: #f0f0f0;
 }
+
 /* Accordian Ends */
+
+.addBtn {
+  margin-top: -1rem;
+  margin-left: -6rem;
+  z-index: 100;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
+  padding: 0.3rem 0.5rem;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  text-decoration: none;
+  text-decoration-style: none;
+}

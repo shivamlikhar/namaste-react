@@ -1,10 +1,26 @@
 import React, { useState } from "react";
+import { addToCard, removeItem, clearCart } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantCategory = (props) => {
     const { title, itemCards } = props.data;
     const { showItem, setShowIndex } = props; // Removed redundant destructuring
     function handleClicked() {
-        setShowIndex()
+        setShowIndex();
+    }
+
+    const dispatch = useDispatch()
+    const handleStoreItem = (cartItems) => {
+        console.log(cartItems)
+        // Dispatch an action to the redux Store - through this we're updating the existing state value by passing addToCard action in dispatch Function
+        console.log("Add Button Clicked");
+        dispatch(addToCard(cartItems)); // by clicking add+ => action is dispatched to the redux store => calls the reducer functions => update the slice of the store
+        // here what dispatch will do it create a payload object & pass to the cartSlice reducers as secord argument of the actions object, 
+        // inshot it will call the addToCard function from the cartSlice.js file and pass the payload object to it in the second argument in place of action
+    }
+
+    const handleStoreItemRemove = () =>{
+        dispatch(removeItem());
     }
     return (
         <div className="restaurant-category">
@@ -39,6 +55,11 @@ const RestaurantCategory = (props) => {
                                     res?.card?.info?.imageId
                                 }
                             ></img>
+
+                            <button className="addBtn" onClick={() => handleStoreItem(res)}>+</button>
+                            <span className="addBtn">Add</span>
+                            <button className="addBtn" onClick={() => handleStoreItemRemove(res)}>-</button>
+                            {/* By Clicking this button Dispatch an action to the redux Store */}
                         </div>
                     </div>
                 ))}
